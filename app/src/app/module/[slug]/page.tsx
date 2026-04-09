@@ -113,12 +113,12 @@ export default async function ModulePage({ params }: Props) {
         )}
 
         {next ? (
-          <Link className="button" href={`/module/${next.slug}`}>
-            {next.title} →
+          <Link className="button" href={`/module/${next.slug}`} style={{ maxWidth: 220, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+            Next: {next.title} →
           </Link>
         ) : (
-          <Link className="button" href="/">
-            Finish and review
+          <Link className="button buttonFinish" href="/">
+            Complete curriculum →
           </Link>
         )}
       </nav>

@@ -15,6 +15,10 @@ export function QuizPanel({ questions }: { questions: QuizQuestion[] }) {
     return { correct, total: questions.length };
   }, [answers, questions]);
 
+  const canSubmit = Object.keys(answers).length > 0;
+  const passed = submitted && score.total > 0 && score.correct / score.total >= 0.8;
+  const pct = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
+
   return (
     <section className="panel section">
       <h2>Checkpoint quiz</h2>
@@ -25,32 +29,42 @@ export function QuizPanel({ questions }: { questions: QuizQuestion[] }) {
             {q.options.map((opt, idx) => {
               const selected = answers[q.id] === idx;
               const isCorrect = idx === q.answerIndex;
+              const isIncorrectSelection = submitted && selected && !isCorrect;
               return (
-                <label key={opt} className="checkline optionRow">
+                <label
+                  key={opt}
+                  className={`checkline optionRow${selected ? " optionRow--selected" : ""}${submitted && isCorrect ? " optionRow--correct" : ""}${isIncorrectSelection ? " optionRow--incorrect" : ""}${submitted ? " optionRow--disabled" : ""}`}
+                >
                   <input
                     type="radio"
                     name={q.id}
                     checked={selected}
+                    disabled={submitted}
                     onChange={() => setAnswers((prev) => ({ ...prev, [q.id]: idx }))}
                   />
-                  <span>
-                    {opt}
-                    {submitted && isCorrect ? " ✅" : ""}
-                  </span>
+                  <span>{opt}</span>
+                  {submitted && isCorrect && <span aria-hidden="true" style={{ marginLeft: "auto", color: "var(--success)" }}>✓</span>}
+                  {isIncorrectSelection && <span aria-hidden="true" style={{ marginLeft: "auto", color: "var(--danger)" }}>✕</span>}
                 </label>
               );
             })}
           </div>
-          {submitted && <p className="muted">{q.explanation}</p>}
+          {submitted && <div className="muted quizExplanation">{q.explanation}</div>}
         </div>
       ))}
 
       <div className="navRow">
-        <button className="button plainButton" onClick={() => setSubmitted(true)}>
-          Submit quiz
+        <button className="button" onClick={() => setSubmitted(true)} disabled={submitted || !canSubmit} aria-disabled={submitted || !canSubmit}>
+          {submitted ? "Answers submitted" : "Submit answers"}
         </button>
         {submitted && (
-          <p><strong>Score:</strong> {score.correct}/{score.total}</p>
+          <div className={`quizResult ${passed ? "quizResult--pass" : "quizResult--fail"}`} role="status">
+            <span className="quizResultScore">{score.correct}/{score.total}</span>
+            <div>
+              <div>{pct}%</div>
+              <div className="quizResultLabel">{passed ? "Passed — ready to proceed" : "Review explanations above"}</div>
+            </div>
+          </div>
         )}
       </div>
     </section>

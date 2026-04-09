@@ -11,6 +11,7 @@ function keyFor(slug: string) {
 
 export function CaseMemoWorkspace({ module }: Props) {
   const [memo, setMemo] = useState("");
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved">("idle");
 
   const template = useMemo(
     () =>
@@ -29,13 +30,21 @@ export function CaseMemoWorkspace({ module }: Props) {
     setMemo(saved || template);
   }, [module.slug, template]);
 
+  useEffect(() => {
+    if (saveStatus !== "saved") return;
+    const timer = window.setTimeout(() => setSaveStatus("idle"), 2000);
+    return () => window.clearTimeout(timer);
+  }, [saveStatus]);
+
   const save = () => {
     window.localStorage.setItem(keyFor(module.slug), memo);
+    setSaveStatus("saved");
   };
 
   const reset = () => {
     setMemo(template);
     window.localStorage.setItem(keyFor(module.slug), template);
+    setSaveStatus("idle");
   };
 
   const download = () => {
@@ -50,13 +59,16 @@ export function CaseMemoWorkspace({ module }: Props) {
 
   return (
     <section className="panel section">
-      <h2>Case memo workspace</h2>
-      <p className="muted">Write your Harvard-style decision memo. It autosaves locally when you click save.</p>
+      <h2>Decision memo</h2>
+      <p className="muted">Write your strategic response to the case. Saved locally in your browser, export to keep a permanent copy.</p>
       <textarea className="memoArea" value={memo} onChange={(e) => setMemo(e.target.value)} />
       <div className="navRow">
-        <button className="button plainButton" onClick={save}>Save memo</button>
-        <button className="button plainButton" onClick={download}>Export .md</button>
-        <button className="button plainButton danger" onClick={reset}>Reset template</button>
+        <button className="button" onClick={save}>Save</button>
+        <button className="button buttonSecondary" onClick={download}>Export .md</button>
+        <button className="button buttonDanger" onClick={reset}>Reset</button>
+        {saveStatus === "saved" && (
+          <span className="saveConfirm" role="status" aria-live="polite">✓ Saved</span>
+        )}
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export function ModuleCard({ module, index }: { module: Module; index: number })
         ))}
       </ul>
       <Link className="button" href={`/module/${module.slug}`}>
-        Open module {index + 1}
+        Start module {index + 1}
       </Link>
     </article>
   );

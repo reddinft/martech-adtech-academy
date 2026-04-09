@@ -27,6 +27,7 @@ export function ProgressTracker({ moduleSlug, totalModules }: Props) {
   );
 
   const checked = !!completeMap[moduleSlug];
+  const pct = totalModules > 0 ? Math.round((completedCount / totalModules) * 100) : 0;
 
   const onToggle = () => {
     const next = { ...completeMap, [moduleSlug]: !checked };
@@ -39,13 +40,20 @@ export function ProgressTracker({ moduleSlug, totalModules }: Props) {
       <div className="actionRow" style={{ justifyContent: "space-between" }}>
         <span className="statusPill">Progress: {completedCount}/{totalModules}</span>
       </div>
-      <label className="checkline">
-        <input type="checkbox" checked={checked} onChange={onToggle} />
-        Mark this module complete
-      </label>
-      <div className="muted">
-        Progress: {completedCount}/{totalModules} modules complete
+      <div className="progressBar" aria-hidden="true">
+        <div className="progressFill" style={{ width: `${pct}%` }} />
       </div>
+      {checked ? (
+        <div className="completeConfirm" role="status">
+          <span>✓</span>
+          <span>Module complete — well done.</span>
+        </div>
+      ) : (
+        <label className="checkline">
+          <input type="checkbox" checked={checked} onChange={onToggle} />
+          Mark complete
+        </label>
+      )}
     </div>
   );
 }

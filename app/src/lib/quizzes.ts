@@ -22,6 +22,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       answerIndex: 1,
       explanation: "You need visibility and ownership before making consolidation decisions.",
     },
+    {
+      id: "m1q3",
+      question: "Scenario: 8.6% of vendors disappeared last year. What should you protect first?",
+      options: ["Logo count", "Data contracts and reporting ownership", "Campaign volume at all costs", "Office location"],
+      answerIndex: 1,
+      explanation: "Contracts and ownership survive churn better than a list of tools.",
+    },
+    {
+      id: "m1q4",
+      question: "If two teams disagree on the stack map, what resolves the argument fastest?",
+      options: ["Title hierarchy", "A shared inventory with renewal dates and owners", "Vendor demos", "A rebrand"],
+      answerIndex: 1,
+      explanation: "Concrete ownership and timing make the operating model visible.",
+    },
   ],
   "customer-data": [
     {
@@ -37,6 +51,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       options: ["To reduce page load speed", "To improve continuity across touchpoints", "To remove first-party data", "To avoid consent collection"],
       answerIndex: 1,
       explanation: "Identity transitions connect behavior before and after authentication/conversion.",
+    },
+    {
+      id: "m2q3",
+      question: "Scenario: product analytics, CRM, and paid media disagree. What becomes system-of-record first?",
+      options: ["The noisiest dataset", "The source tied to the critical launch decision", "The prettiest dashboard", "The oldest platform"],
+      answerIndex: 1,
+      explanation: "Pick the source that governs the decision and make it authoritative first.",
+    },
+    {
+      id: "m2q4",
+      question: "What best reduces schema drift over time?",
+      options: ["More ad spend", "Named ownership and change approval", "Extra dashboards", "Shorter emails"],
+      answerIndex: 1,
+      explanation: "Ownership plus approval reduces accidental breaking changes.",
     },
   ],
   "crm-map-cdp": [
@@ -54,6 +82,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       answerIndex: 1,
       explanation: "Suite tools can move faster initially, while composable often improves control over time.",
     },
+    {
+      id: "m3q3",
+      question: "Scenario: the board wants one platform. What risk should you state explicitly?",
+      options: ["You will never need integrations", "You may trade control for speed", "Data quality becomes automatic", "Latency disappears"],
+      answerIndex: 1,
+      explanation: "Every architecture choice makes a visible tradeoff, especially around control and lock-in.",
+    },
+    {
+      id: "m3q4",
+      question: "Which workflow should stay real-time if freshness matters?",
+      options: ["Quarterly finance close", "Triggered cart recovery", "Annual procurement review", "Static brand guidelines"],
+      answerIndex: 1,
+      explanation: "Time-sensitive triggers need low-latency activation.",
+    },
   ],
   "programmatic-pipes": [
     {
@@ -69,6 +111,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       options: ["Increase bids everywhere", "Audit supply quality and path efficiency", "Turn off all retargeting", "Stop all measurement"],
       answerIndex: 1,
       explanation: "Quality and path inefficiencies are common drivers of performance decay at scale.",
+    },
+    {
+      id: "m4q3",
+      question: "Scenario: a reseller chain is opaque. What is the operator move?",
+      options: ["Ignore it if clicks are cheap", "Exclude or downgrade the path until verified", "Raise frequency caps only", "Change the logo"],
+      answerIndex: 1,
+      explanation: "Opaque paths should not earn full trust without verification.",
+    },
+    {
+      id: "m4q4",
+      question: "What does ads.txt let publishers do?",
+      options: ["Bid on creative", "Publicly declare authorised sellers", "Encrypt audiences", "Increase page speed"],
+      answerIndex: 1,
+      explanation: "ads.txt creates a public authorization list for buyers to inspect.",
     },
   ],
   "privacy-consent": [
@@ -86,6 +142,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       answerIndex: 1,
       explanation: "Hybrid pipelines improve reliability under browser/privacy constraints.",
     },
+    {
+      id: "m5q3",
+      question: "Scenario: browser and server both send the same conversion. What must happen?",
+      options: ["Count both for confidence", "Deduplicate with a shared event key", "Delete consent logs", "Lower the media budget"],
+      answerIndex: 1,
+      explanation: "Deduplication keeps browser and server events trustworthy.",
+    },
+    {
+      id: "m5q4",
+      question: "What is the safest fallback when deterministic tracking weakens?",
+      options: ["Assume nothing changed", "Use modeled reporting and guardrail KPIs", "Remove reporting entirely", "Double the spend"],
+      answerIndex: 1,
+      explanation: "Modeled reporting plus guardrails preserves decision-making under data loss.",
+    },
   ],
   measurement: [
     {
@@ -101,6 +171,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       options: ["Total clicks", "Causal lift beyond baseline", "Audience size", "Ad server latency"],
       answerIndex: 1,
       explanation: "Incrementality estimates the additional impact caused by marketing activity.",
+    },
+    {
+      id: "m6q3",
+      question: "Scenario: platform ROAS improves but payback worsens. What governs budget?",
+      options: ["The best-looking dashboard", "The measure tied to business value and causality", "The loudest channel owner", "The oldest attribution window"],
+      answerIndex: 1,
+      explanation: "Budget should follow the metric that best captures true value, not vanity lift.",
+    },
+    {
+      id: "m6q4",
+      question: "A holdout test is mainly used to estimate:",
+      options: ["Creative colour preference", "Incremental impact versus a control", "Warehouse latency", "CRM field completeness"],
+      answerIndex: 1,
+      explanation: "Holdouts isolate causal lift by comparing treatment to control.",
     },
   ],
   lifecycle: [
@@ -118,6 +202,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       answerIndex: 1,
       explanation: "Activation bottlenecks are often solved by improving early product/value moments.",
     },
+    {
+      id: "m7q3",
+      question: "Scenario: declared identity and behaviour disagree. Which signal gets priority?",
+      options: ["Whatever is easiest to export", "The signal closest to the decision use case", "The newest dashboard", "Neither signal ever"],
+      answerIndex: 1,
+      explanation: "Signal priority depends on the job, not the convenience of extraction.",
+    },
+    {
+      id: "m7q4",
+      question: "What should you exclude from a trigger set if it creates fatigue?",
+      options: ["Only logo size", "Low-value, high-frequency events", "All behavioural data", "All defaults"],
+      answerIndex: 1,
+      explanation: "Trigger design should exclude noisy events that do not predict intent.",
+    },
   ],
   "creative-ai": [
     {
@@ -133,6 +231,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       options: ["No thresholds", "Predefined statistical and business gates", "Only designer preference", "Single-platform results only"],
       answerIndex: 1,
       explanation: "Promotion criteria should include both significance and business impact thresholds.",
+    },
+    {
+      id: "m8q3",
+      question: "Scenario: the best CTR creative does not improve revenue. What should you do?",
+      options: ["Promote it anyway", "Judge it on downstream conversion or revenue", "Ignore the result", "Stop testing forever"],
+      answerIndex: 1,
+      explanation: "The winner should be the creative that improves the business outcome that matters.",
+    },
+    {
+      id: "m8q4",
+      question: "What makes component-based creative useful?",
+      options: ["It removes judgment", "It generalizes across placements and contexts", "It guarantees one ad winner", "It eliminates testing"],
+      answerIndex: 1,
+      explanation: "Reusable components help scale across surfaces while preserving learning.",
     },
   ],
   "vendor-evaluation": [
@@ -150,6 +262,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       answerIndex: 1,
       explanation: "Governance clarifies adoption gates and ownership to reduce stack entropy.",
     },
+    {
+      id: "m9q3",
+      question: "Scenario: the board demands a 30% cost cut. What do you protect first?",
+      options: ["The cheapest vendor", "Capabilities tied to measurable lift or control", "The loudest request", "The newest feature"],
+      answerIndex: 1,
+      explanation: "Protect the capabilities that still earn their keep.",
+    },
+    {
+      id: "m9q4",
+      question: "Which criterion is most dangerous to ignore in vendor selection?",
+      options: ["Logo design", "Switching cost and data portability", "Meeting length", "Slide count"],
+      answerIndex: 1,
+      explanation: "If you cannot exit cleanly, the tool can become structural debt.",
+    },
   ],
   capstone: [
     {
@@ -165,6 +291,20 @@ export const quizzesByModule: Record<string, QuizQuestion[]> = {
       options: ["Ignore fundamentals", "Run quick wins while hardening architecture", "Do only research", "Delay all campaign activity"],
       answerIndex: 1,
       explanation: "Dual-track balances immediate impact with long-term system health.",
+    },
+    {
+      id: "m10q3",
+      question: "Scenario: finance and growth disagree on the KPI tree. What should come first?",
+      options: ["A prettier dashboard", "A shared decision rule and owner map", "More channels", "A new agency"],
+      answerIndex: 1,
+      explanation: "Shared rules and ownership resolve cross-functional disagreement.",
+    },
+    {
+      id: "m10q4",
+      question: "If you need to prove cross-channel contribution, what is the first discipline to set?",
+      options: ["Attribution chaos", "A consistent measurement and review cadence", "Only creative testing", "No KPIs"],
+      answerIndex: 1,
+      explanation: "Contribution claims require a repeatable measurement rhythm.",
     },
   ],
 };
