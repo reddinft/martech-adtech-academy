@@ -2,9 +2,9 @@
 _Last updated: 2026-04-09 10:36 AEST by Loki_
 
 ## 🔖 RESUME FROM HERE
-- **Next action:** Review new real-company case modules in localhost and confirm if ready for Vercel deploy
-- **Waiting on:** Nissan confirmation + one-time deploy auth (`vercel login` preferred)
-- **Last discussed:** Real-world company case studies integrated across all modules and localhost smoke-tested
+- **Next action:** Continue execution in Telegram group `-5206481545` as primary thread; run Vercel auth+deploy after Nissan confirmation
+- **Waiting on:** Nissan one-time deploy auth (`vercel login` preferred)
+- **Last discussed:** Context migrated from direct chat to group and handoff posted
 
 ## 📍 Current Phase
 **Phase:** Phase 2 — Prototype Delivered (Research + Curriculum + App)  
@@ -20,6 +20,7 @@ _Last updated: 2026-04-09 10:36 AEST by Loki_
 - Repo: `https://github.com/reddinft/martech-adtech-academy`
 
 ## 🧠 Key Decisions (immutable log)
+- 2026-04-09: Project conversation migrated to Telegram group `-5206481545`; context handoff posted and group set as primary continuation thread
 - 2026-04-09: Added real-world case pack (`CASE_STUDIES.md`) and module-level real-company exercises (Booking.com, Airbnb, Netflix, HubSpot ecosystem, NYT/IAB standards, Snowplow, Amazon Ads)
 - 2026-04-09: Localhost smoke test completed (`pnpm dev` + route checks for `/`, `/module/industry-map`, `/module/measurement`)
 - 2026-04-09: Phase 2 shipped — added checkpoint quizzes and local case memo workspace with markdown export per module
