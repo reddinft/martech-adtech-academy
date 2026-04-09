@@ -3,8 +3,10 @@ import { notFound } from "next/navigation";
 import { ProgressTracker } from "@/components/ProgressTracker";
 import { QuizPanel } from "@/components/QuizPanel";
 import { CaseMemoWorkspace } from "@/components/CaseMemoWorkspace";
+import { RealCasePanel } from "@/components/RealCasePanel";
 import { moduleBySlug, modules } from "@/lib/curriculum";
 import { quizzesByModule } from "@/lib/quizzes";
+import { realCasesByModule } from "@/lib/realCases";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,6 +19,7 @@ export default async function ModulePage({ params }: Props) {
   const prev = modules[index - 1];
   const next = modules[index + 1];
   const questions = quizzesByModule[module.slug] ?? [];
+  const realCase = realCasesByModule[module.slug];
 
   return (
     <main className="container">
@@ -85,6 +88,8 @@ export default async function ModulePage({ params }: Props) {
           ))}
         </ul>
       </section>
+
+      {realCase && <RealCasePanel realCase={realCase} />}
 
       {questions.length > 0 && <QuizPanel questions={questions} />}
 
