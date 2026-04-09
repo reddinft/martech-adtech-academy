@@ -2,9 +2,9 @@
 _Last updated: 2026-04-09 10:36 AEST by Loki_
 
 ## 🔖 RESUME FROM HERE
-- **Next action:** Review curriculum in app, then decide whether to deploy preview (Vercel/Fly) and expand with quizzes/video
-- **Waiting on:** Nissan review + optional deployment preference
-- **Last discussed:** Initial research + syllabus + standalone Next.js app completed and pushed to GitHub
+- **Next action:** Authenticate Vercel or Fly (`vercel login` or `flyctl auth login`) to publish live preview URL
+- **Waiting on:** Nissan to run one-time platform login (tokens are currently invalid/missing)
+- **Last discussed:** Phase 2 complete: module quizzes + case memo workflow added and pushed
 
 ## 📍 Current Phase
 **Phase:** Phase 2 — Prototype Delivered (Research + Curriculum + App)  
@@ -20,6 +20,8 @@ _Last updated: 2026-04-09 10:36 AEST by Loki_
 - Repo: `https://github.com/reddinft/martech-adtech-academy`
 
 ## 🧠 Key Decisions (immutable log)
+- 2026-04-09: Phase 2 shipped — added checkpoint quizzes and local case memo workspace with markdown export per module
+- 2026-04-09: Live deploy attempt blocked by missing/invalid CLI auth tokens (Vercel/Fly); app is build-verified locally
 - 2026-04-09: GitHub repo created `reddinft/martech-adtech-academy`; Nissan (`github.com/nissan`) invited as admin collaborator
 - 2026-04-09: Standalone Next.js app implemented with 10 modules, Harvard-case sections, and local progress tracking
 - 2026-04-09: Research and syllabus delivered in markdown artifacts (`RESEARCH_SYNTHESIS.md`, `SYLLABUS.md`)
@@ -27,7 +29,8 @@ _Last updated: 2026-04-09 10:36 AEST by Loki_
 - 2026-04-09: Delivery format chosen: Harvard-style case modules + standalone Next.js guided learning app
 
 ## ⚠️ Blockers & Flags
-- [ ] Optional: choose deployment target (Vercel/Fly) for shareable learning app URL
+- [ ] Deployment blocked: Vercel token invalid (`vercel --yes` failed)
+- [ ] Deployment blocked: Fly token missing (`flyctl auth whoami` failed)
 
 ## 📋 Agent Notes
 - **Loki:** Started project scaffold, research synthesis, curriculum architecture, and app build.
