@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProgressTracker } from "@/components/ProgressTracker";
+import { QuizPanel } from "@/components/QuizPanel";
+import { CaseMemoWorkspace } from "@/components/CaseMemoWorkspace";
 import { moduleBySlug, modules } from "@/lib/curriculum";
+import { quizzesByModule } from "@/lib/quizzes";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -13,6 +16,7 @@ export default async function ModulePage({ params }: Props) {
   const index = modules.findIndex((m) => m.slug === slug);
   const prev = modules[index - 1];
   const next = modules[index + 1];
+  const questions = quizzesByModule[module.slug] ?? [];
 
   return (
     <main className="container">
@@ -81,6 +85,10 @@ export default async function ModulePage({ params }: Props) {
           ))}
         </ul>
       </section>
+
+      {questions.length > 0 && <QuizPanel questions={questions} />}
+
+      <CaseMemoWorkspace module={module} />
 
       <nav className="navRow">
         {prev ? (

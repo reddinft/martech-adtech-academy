@@ -15,3 +15,8 @@ a { color: inherit; text-decoration: none; }
 .list { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
 .navRow { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; }
 .checkline { display: flex; gap: 8px; align-items: center; }
+.quizBlock { border-top: 1px solid #25305e; padding-top: 10px; margin-top: 6px; }
+.quizOptions { display: grid; gap: 6px; }
+.memoArea { width: 100%; min-height: 280px; border-radius: 10px; border: 1px solid #2e396d; background: #0f1730; color: #e8ecff; padding: 12px; font: 14px/1.45 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+.plainButton { border: none; cursor: pointer; }
+.danger { background: #8f2d45; }
