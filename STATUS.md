@@ -1,10 +1,10 @@
 # STATUS: MarTech + AdTech Academy
-_Last updated: 2026-04-09 10:36 AEST by Loki_
+_Last updated: 2026-04-09 13:20 AEST by Loki_
 
 ## 🔖 RESUME FROM HERE
-- **Next action:** Nissan review/merge PR #1 (`feat/cold-call-prompts-and-bdd-e2e`), then Vercel auto-deploy on merge
-- **Waiting on:** Nissan one-time deploy auth (`vercel login` preferred)
-- **Last discussed:** Context migrated from direct chat to group and handoff posted
+- **Next action:** Open PR for CI quality gate + deploy workflow docs updates, then request Nissan review
+- **Waiting on:** Nissan PR approval, plus Vercel project visibility/auth for live URL smoke
+- **Last discussed:** Continue building requested; added deployment-readiness hardening and revalidated tests
 
 ## 📍 Current Phase
 **Phase:** Phase 2 — Prototype Delivered (Research + Curriculum + App)  
@@ -17,9 +17,11 @@ _Last updated: 2026-04-09 10:36 AEST by Loki_
 - Syllabus: `projects/martech-adtech-academy/SYLLABUS.md`
 - App: `projects/martech-adtech-academy/app/`
 - Plan: `projects/martech-adtech-academy/BUILD_PLAN.md`
-- Repo: `https://github.com/reddinft/martech-adtech-academy`
+- Repo: `https://github.com/nissan/martech-adtech-academy`
 
 ## 🧠 Key Decisions (immutable log)
+- 2026-04-09: Added GitHub Actions CI gate (`academy-ci`) to enforce app build + BDD E2E on PR/main; updated README deploy flow
+- 2026-04-09: PR #1 merged to `main`; post-merge local smoke passed (`pnpm -C app build` + `pnpm -C app test:e2e` 4/4)
 - 2026-04-09: Added BDD deployment gate with Playwright E2E (feature + executable scenarios) and opened PR #1 for review
 - 2026-04-09: Repo ownership transferred; all future changes must be feature-branch + PR for Nissan approval before merge/deploy
 - 2026-04-09: Completed content QA pass: converted module case prompts/discussion questions to cold-call Harvard format in syllabus + app curriculum; build re-validated
