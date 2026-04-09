@@ -2,7 +2,7 @@
 _Last updated: 2026-04-09 10:36 AEST by Loki_
 
 ## 🔖 RESUME FROM HERE
-- **Next action:** Run Vercel auth+deploy after Nissan confirmation (content QA pass complete, case prompts tightened to cold-call format)
+- **Next action:** Nissan review/merge PR #1 (`feat/cold-call-prompts-and-bdd-e2e`), then Vercel auto-deploy on merge
 - **Waiting on:** Nissan one-time deploy auth (`vercel login` preferred)
 - **Last discussed:** Context migrated from direct chat to group and handoff posted
 
@@ -20,6 +20,7 @@ _Last updated: 2026-04-09 10:36 AEST by Loki_
 - Repo: `https://github.com/reddinft/martech-adtech-academy`
 
 ## 🧠 Key Decisions (immutable log)
+- 2026-04-09: Added BDD deployment gate with Playwright E2E (feature + executable scenarios) and opened PR #1 for review
 - 2026-04-09: Repo ownership transferred; all future changes must be feature-branch + PR for Nissan approval before merge/deploy
 - 2026-04-09: Completed content QA pass: converted module case prompts/discussion questions to cold-call Harvard format in syllabus + app curriculum; build re-validated
 - 2026-04-09: Project conversation migrated to Telegram group `-5206481545`; context handoff posted and group set as primary continuation thread
