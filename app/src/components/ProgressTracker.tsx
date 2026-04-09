@@ -36,6 +36,9 @@ export function ProgressTracker({ moduleSlug, totalModules }: Props) {
 
   return (
     <div className="panel" style={{ display: "grid", gap: 10 }}>
+      <div className="actionRow" style={{ justifyContent: "space-between" }}>
+        <span className="statusPill">Progress: {completedCount}/{totalModules}</span>
+      </div>
       <label className="checkline">
         <input type="checkbox" checked={checked} onChange={onToggle} />
         Mark this module complete

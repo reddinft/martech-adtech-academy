@@ -33,15 +33,16 @@ export function FirstTimeOnboardingPrompt() {
   if (!ready || !show) return null;
 
   return (
-    <section className="panel section" style={{ marginBottom: 16 }}>
-      <h2 style={{ margin: 0 }}>New learner recommended path</h2>
-      <p className="muted" style={{ margin: 0 }}>
-        Start with the 3-minute onboarding to understand module types, learning loop, and how Harvard-style
-        case discussions build decision quality.
-      </p>
-      <div className="navRow" style={{ marginTop: 8 }}>
+    <section className="panel banner" style={{ marginBottom: 16 }}>
+      <div>
+        <h2 style={{ margin: 0 }}>New learner recommended path</h2>
+        <p className="muted" style={{ margin: 0 }}>
+          Start with the 3-minute onboarding to understand module types and the Harvard-case learning loop.
+        </p>
+      </div>
+      <div className="actionRow">
         <button className="button plainButton" onClick={startOnboarding}>Start guided onboarding</button>
-        <button className="button plainButton" onClick={dismiss}>Skip for now</button>
+        <button className="button plainButton buttonSecondary" onClick={dismiss}>Skip for now</button>
       </div>
     </section>
   );

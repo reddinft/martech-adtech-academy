@@ -14,24 +14,34 @@ export default function HomePage() {
         <p>
           Structure used from Academy builds: module-first learning, guided routes, and measurable progress.
         </p>
+        <div className="heroCtas">
+          <Link className="button" href="/onboarding">
+            Start onboarding
+          </Link>
+          <Link className="button buttonSecondary" href="/module/industry-map">
+            Jump to Module 1
+          </Link>
+        </div>
       </header>
 
       <FirstTimeOnboardingPrompt />
 
       <section className="panel" style={{ marginBottom: 16 }}>
-        <p style={{ marginTop: 0 }}>
-          <strong>New here?</strong> Start with the guided onboarding flow before Module 1.
-        </p>
-        <Link className="button" href="/onboarding">
-          Start onboarding
-        </Link>
-
-        <strong>How to use this:</strong>
-        <ol className="list" style={{ marginTop: 8 }}>
-          <li>Read the theory section.</li>
-          <li>Complete the practical lab artifact.</li>
-          <li>Write a case memo answering the decision dilemma.</li>
-        </ol>
+        <h2 style={{ marginTop: 0 }}>How to use this</h2>
+        <div className="howStrip">
+          <article className="stepCard">
+            <p className="stepTitle">Step 1</p>
+            <p className="stepText">Read the theory section</p>
+          </article>
+          <article className="stepCard">
+            <p className="stepTitle">Step 2</p>
+            <p className="stepText">Complete the practical lab artifact</p>
+          </article>
+          <article className="stepCard">
+            <p className="stepTitle">Step 3</p>
+            <p className="stepText">Write a decision-quality case memo</p>
+          </article>
+        </div>
       </section>
 
       <section className="grid">

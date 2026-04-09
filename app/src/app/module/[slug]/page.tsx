@@ -28,12 +28,16 @@ export default async function ModulePage({ params }: Props) {
           ← Back to all modules
         </Link>
         <h1>{module.title}</h1>
-        <p className="muted">Estimated time: {module.duration}</p>
+        <div className="actionRow">
+          <span className="chip">Estimated time: {module.duration}</span>
+          <span className="chip">Step {index + 1} of {modules.length}</span>
+        </div>
       </header>
 
       <ProgressTracker moduleSlug={module.slug} totalModules={modules.length} />
 
       <section className="panel section" style={{ marginTop: 14 }}>
+        <p className="sectionKicker">Step 1</p>
         <h2>Learning outcomes</h2>
         <ul className="list">
           {module.outcomes.map((item) => (
@@ -43,6 +47,7 @@ export default async function ModulePage({ params }: Props) {
       </section>
 
       <section className="panel section">
+        <p className="sectionKicker">Step 2</p>
         <h2>Theory</h2>
         <ul className="list">
           {module.theory.map((item) => (
@@ -52,6 +57,7 @@ export default async function ModulePage({ params }: Props) {
       </section>
 
       <section className="panel section">
+        <p className="sectionKicker">Step 3</p>
         <h2>Practical lab</h2>
         <ul className="list">
           {module.practical.map((item) => (
@@ -61,6 +67,7 @@ export default async function ModulePage({ params }: Props) {
       </section>
 
       <section className="panel section">
+        <p className="sectionKicker">Step 4</p>
         <h2>Leading tools to know</h2>
         <ul className="list">
           {module.tools.map((item) => (
@@ -70,6 +77,7 @@ export default async function ModulePage({ params }: Props) {
       </section>
 
       <section className="panel section">
+        <p className="sectionKicker">Step 5</p>
         <h2>Harvard-style case</h2>
         <p><strong>Protagonist:</strong> {module.caseStudy.protagonist}</p>
         <p><strong>Context:</strong> {module.caseStudy.context}</p>

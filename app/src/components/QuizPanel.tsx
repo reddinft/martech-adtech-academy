@@ -26,7 +26,7 @@ export function QuizPanel({ questions }: { questions: QuizQuestion[] }) {
               const selected = answers[q.id] === idx;
               const isCorrect = idx === q.answerIndex;
               return (
-                <label key={opt} className="checkline">
+                <label key={opt} className="checkline optionRow">
                   <input
                     type="radio"
                     name={q.id}
